@@ -522,6 +522,13 @@
           "show_product_info": true,
           "show_color_swatch": false
         }
+      },
+      "164559665732121d99": {
+        "type": "background-video",
+        "settings": {
+          "section_size": "large",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=DmzV-vQaocI"
+        }
       }
     },
     "content_for_index": [
@@ -532,7 +539,8 @@
       "collection-list",
       "1536065970902",
       "1536065842202",
-      "1536067011368"
+      "1536067011368",
+      "164559665732121d99"
     ]
   },
   "presets": {
