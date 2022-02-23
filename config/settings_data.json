@@ -309,8 +309,8 @@
         "settings": {
           "show_share_buttons": true,
           "show_vendor": true,
-          "description_below_add_to_cart": false,
-          "show_color_swatch": true,
+          "description_below_add_to_cart": true,
+          "show_color_swatch": false,
           "show_color_carousel": false,
           "show_quantity_selector": true,
           "show_inventory_quantity": false,
