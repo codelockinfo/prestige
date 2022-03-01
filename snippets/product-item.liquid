@@ -17,7 +17,7 @@
       {%- assign has_alternate_image = false -%}
     {%- endif -%}
 
-    <a href="{{ product.url | within: collection }}" class="ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %}">
+    <a href="{{ product.url | within: collection }}" class="cls ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %}">
       {%- if use_horizontal -%}
         {%- assign max_width = 125 -%}
       {%- else -%}
