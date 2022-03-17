@@ -204,59 +204,38 @@
                               </div>
                             </div>
                           {%- else -%}
-                            <div id="{{ popover_id }}" class="OptionSelector Popover Popover--withMinWidth" aria-hidden="true">
-                              <header class="Popover__Header">
-                                <button type="button" class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% render 'icon' with 'close' %}</button>
-                                <span class="Popover__Title Heading u-h4">{{ option.name | escape }}</span>
-                              </header>
-              
-                              <div class="Popover__Content">
-                                <div class="Popover__ValueList" data-scrollable>
-                                  
-                                  
-                                   
-                                   {%- if size_label contains downcase_option -%}
-                          
-                         
-                                  
-                                  {%- for value in product.variants -%}
-                                    <button type="button" class="Popover__Value main-click {% if value.title == option.selected_value %}is-selected{% endif %} Heading Link Link--primary u-h6"
-                                            data-value="{{ value.title | escape }}"
-                                             data-sw="{{ value.title | escape }}"
-                                            data-option-position="{{ option.position }}"
-                                            data-action="select-value"
-                                            {% if value.available %}{% else %} disabled {% endif %}
-                            >
-                                      {{- value.title | escape -}} - {% if value.available %}{{- value.price | money -}}{% else %} SOLD OUT {% endif %}
-                                    </button>
-                                  {%- endfor -%}
-                                  
-                                  {% else %}
-                                  
-                                  {%- for value in option.values -%}
-                                    <button type="button" class="Popover__Value main-click {% if value == option.selected_value %}is-selected{% endif %} Heading Link Link--primary u-h6"
-                                            data-value="{{ value | escape }}"
-                                             data-sw="{{ value | escape }}"
-                                            data-option-position="{{ option.position }}"
-                                            data-action="select-value">
-                                      {{- value | escape -}}
-                                    </button>
-                                  {%- endfor -%}
-                                  
-                                  
-                                   {%- endif -%}
-                                  
-                                </div>
-              
-                                {%- assign size_chart_page = block.settings.size_chart -%}
-              
-                                {%- if show_option_label == false and size_label contains downcase_option and size_chart_page != blank -%}
-                                  <button type="button" class="Popover__FooterHelp Heading Link Link--primary Text--subdued u-h6" data-action="open-modal" aria-controls="modal-{{ size_chart_page.handle }}">
-                                    {{- 'product.form.size_chart' | t -}}
-                                  </button>
-                                {%- endif -%}
-                              </div>
-                            </div>
+                             <div id="{{ popover_id }}" class="OptionSelector Popover Popover--withMinWidth" aria-hidden="true">
+                <header class="Popover__Header">
+                  <button type="button" class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% include 'icon' with 'close' %}</button>
+                  <span class="Popover__Title Heading u-h4">{{ option.name | escape }}</span>
+                </header>
+
+                <div class="Popover__Content">
+                  <div class="cls Popover__ValueList" data-scrollable>
+                    {%- for value in option.values -%}
+                      <button type="button" class="Popover__Value {% if value == option.selected_value %}is-selected{% endif %} Heading Link Link--primary u-h6"
+                              data-value="{{ value | escape }}"
+                              data-option-position="{{ option.position }}"
+                              {% if is_option_with_color_swatch %}
+                                data-background-color="{{ value | replace: ' ', '' }}"
+                                data-background-image="{{ value | handle | append: '.png' | asset_url }}"
+                              {% endif %}
+                              data-action="select-value">
+                        {{- value | escape -}}
+                      </button>
+                    {%- endfor -%}
+                  </div>
+
+                  {%- assign size_chart_page_handle = settings.size_chart_page | default: 'size-chart' -%}
+                  {%- assign size_chart_page = pages[size_chart_page_handle] -%}
+
+                  {%- if size_label contains downcase_option and size_chart_page != empty -%}
+                    <button type="button" class="Popover__FooterHelp Heading Link Link--primary Text--subdued u-h6" data-action="open-modal" aria-controls="modal-{{ size_chart_page.handle }}">
+                      {{- 'product.form.size_chart' | t -}}
+                    </button>
+                  {%- endif -%}
+                </div>
+              </div>
                           {%- endif -%}
                         {%- endcapture -%}
               
