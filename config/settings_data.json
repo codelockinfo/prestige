@@ -378,7 +378,7 @@
         "settings": {
           "use_sticky_header": true,
           "logo_max_width": 140,
-          "navigation_menu": "basics-nutrition",
+          "navigation_menu": "",
           "navigation_style": "center",
           "enable_transparent_header": true,
           "enable_transparent_header_collection": false,
@@ -527,7 +527,28 @@
         "type": "background-video",
         "settings": {
           "section_size": "large",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=DmzV-vQaocI"
+          "video_url": "https:\/\/www.youtube.com\/watch?v=DmzV-vQaocI",
+          "heading": "",
+          "text": ""
+        }
+      },
+      "1647509784aeb91b89": {
+        "type": "custom-shop-the-look",
+        "blocks": {
+          "1647509784aeb91b89-0": {
+            "type": "look",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Main-Banner-1_180x_10f6f481-ed72-4476-be0a-c07598378f35.jpg",
+              "product_1": "cambridge",
+              "customframe_product": ""
+            }
+          }
+        },
+        "block_order": [
+          "1647509784aeb91b89-0"
+        ],
+        "settings": {
+          "abovebelowproduct": false
         }
       }
     },
@@ -540,7 +561,8 @@
       "1536065970902",
       "1536065842202",
       "1536067011368",
-      "164559665732121d99"
+      "164559665732121d99",
+      "1647509784aeb91b89"
     ]
   },
   "presets": {
