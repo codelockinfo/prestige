@@ -134,7 +134,7 @@ for size, we use it to display a size chart (if applicable)
                 </header>
 
                 <div class="Popover__Content">
-                  <div class="Popover__ValueList" data-scrollable>
+                  <div class="cls Popover__ValueList" data-scrollable>
                     {%- for value in option.values -%}
                       <button type="button" class="Popover__Value {% if value == option.selected_value %}is-selected{% endif %} Heading Link Link--primary u-h6"
                               data-value="{{ value | escape }}"
