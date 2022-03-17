@@ -1,0 +1,32 @@
+<button type="button" class="ProductForm__Item" aria-expanded="false" aria-controls="frame-6000">
+  <span class="ProductForm__OptionName"><span class="ProductForm__SelectedValue FrameColour">{{ 'product.form.no_frame'
+      | t }}</span></span>
+  {%- render 'icon' with 'select-arrow' -%}
+</button>
+
+<div id="frame-6000" class="OptionSelector Popover Popover--withMinWidth Popover--positionLeft Popover--alignCenter"
+  aria-hidden="true">
+
+
+  <div class="Popover__Content">
+    <div class="Popover__ValueList" data-scrollable="">
+
+      <input type="hidden" name="value" value="" id="varient_id">
+      <button type="button" class="Popover__Value Heading Link Link--primary u-h6 varients no-frame"
+        data-value="No Frame" data-action="select-value">{{ 'product.form.no_frame' | t }}</button>
+
+      {%assign index = forloop.index %}
+      {%- for variant in product.variants -%}
+      {% if variant.available %}
+
+      <button data-image="{{ variant.image | img_url: '800x'}}" data-for="{{ variant.price  }}"
+        data-price="{{ variant.price | money }}" data-attr="{{ variant.id }}" type="button"
+        class="Popover__Value c-click Heading Link varientss Link--primary u-h6 " data-size="{{ variant.option1 }}"
+        data-value="{{ variant.option2 }}" data-sw"={{ variant.option1 }}" data-action="select-value">{{ variant.option2
+        }} - {{ variant.price | money }}</button>
+
+      {% endif %}
+      {%- endfor -%}
+
+    </div>
+  </div>
