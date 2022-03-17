@@ -1,0 +1,503 @@
+<script src="{{ 'theme.css' | asset_url }}" defer></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ 'libs.min.js' | asset_url }}" defer></script>
+<script src="{{ 'theme.js' | asset_url }}" defer></script>
+<section class="Section Section--spacingNormal" data-section-id="{{ section.id }}" data-section-type="custom-shop-the-look">
+  {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+    <header class="SectionHeader SectionHeader--center">
+      <div class="Container">
+        {%- if section.settings.title != blank -%}
+          <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+        {%- endif -%}
+      </div>
+    </header>
+  {%- endif -%}
+  {%- for block in section.blocks -%}
+  {% assign product =  block.settings.product_1 %}
+    {%- if block.settings.image != blank -%}
+    <form method="post" action="/cart/add" id="" accept-charset="UTF-8" class="ProductForm" enctype="multipart/form-data"><input type="hidden" name="form_type" value="product">
+      <div class="customimageList {% if section.settings.abovebelowproduct %} abovebelowproduct {% endif %}">
+        <div class="customProductItem__Wrapper ">
+          <img src="{{ block.settings.image | img_url: 'master'}}"  />
+        </div>
+        <div class="customProductItem__Wrapper customproduct">  
+          <div class="customwidth">
+            
+            <h1 class="ProductMeta__Title Heading u-h2">{{ block.settings.product_1.title }}</h1>
+            <div class="ProductMeta__PriceList Heading"><span class="ProductMeta__Price Price Text--subdued u-h4"">{{ block.settings.product_1.price | money }}</span></div>
+            
+
+
+<!--cls003 variant size   -->
+              {%- assign selected_variant = product.selected_or_first_available_variant -%}
+
+              <div class="ProductForm__Variants">
+                {%- unless product.has_only_default_variant -%}
+                  {%- for option in product.options_with_values -%}
+                    {%- assign downcase_option = option.name | downcase -%}
+              
+                    {%- if block.settings.selector_mode == 'block' or color_label contains downcase_option and block.settings.show_color_swatch -%}
+                      {%- assign show_option_label = true -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+              
+                  {%- for option in product.options_with_values -%}
+                    {%- assign downcase_option = option.name | downcase -%}
+                    {%- capture popover_id -%}popover-{{ product.id }}-{{ section.id }}-{{ option.name | handle }}{%- endcapture -%}
+              
+                    <div class="ProductForm__Option {% if show_option_label %}ProductForm__Option--labelled{% endif %}">
+                      {%- if show_option_label -%}
+                        {%- assign size_chart_page = block.settings.size_chart -%}
+              
+                        <span class="ProductForm__Label">
+                          {{ option.name }}:
+              
+                          {% if color_label contains downcase_option and block.settings.show_color_swatch %}
+                            <span class="ProductForm__SelectedValue">{{ option.selected_value }}</span>
+                          {% endif %}
+              
+                          {%- if size_label contains downcase_option and size_chart_page != blank -%}
+                            <button type="button" class="ProductForm__LabelLink Link Text--subdued" data-action="open-modal" aria-controls="modal-{{ size_chart_page.handle }}">
+                            {{- 'product.form.size_chart' | t -}}
+                          </button>
+                          {%- endif -%}
+                        </span>
+                      {%- endif -%}
+              
+                      {%- if color_label contains downcase_option and block.settings.show_color_swatch -%}
+                        <ul class="ColorSwatchList HorizontalList HorizontalList--spacingTight">
+                          {%- assign color_swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
+              
+                          {%- for value in option.values -%}
+                            {%- assign downcase_value = value | downcase -%}
+              
+                            <li class="HorizontalList__Item">
+                              <input id="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}" class="ColorSwatch__Radio" type="radio" name="option-{{ forloop.parentloop.index0 }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-option-position="{{ option.position }}">
+                              <label for="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}" class="ColorSwatch ColorSwatch--large {% if downcase_value == 'white' %}ColorSwatch--white{% endif %}" data-tooltip="{{ value | escape }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: value %}">
+                                <span class="u-visually-hidden">{{ value }}</span>
+                              </label>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- elsif block.settings.selector_mode == 'block' -%}
+                        <ul class="SizeSwatchList HorizontalList HorizontalList--spacingTight">
+                          {%- for value in option.values -%}
+                            <li class="HorizontalList__Item">
+                              <input data-sw="{{ value | handleize }}" id="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}" class="SizeSwatch__Radio" type="radio" name="option-{{ forloop.parentloop.index0 }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-option-position="{{ option.position }}">
+                              <label for="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}" class="SizeSwatch">{{ value }}</label>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- else -%}
+                        <button type="button" class="ProductForm__Item " aria-expanded="false" aria-controls="{{ popover_id }}">
+                          <span class="ProductForm__OptionName">{% unless show_option_label %}{{ option.name }}: {% endunless %}<span class="ProductForm__SelectedValue">{{ option.selected_value }}</span></span>
+                          {%- render 'icon' with 'select-arrow' -%}
+                        </button>
+                      
+              
+                        {%- capture popover_html -%}
+                          {%- if color_label contains downcase_option and block.settings.show_color_carousel -%}
+                            {%- for value in option.values -%}
+                              {%- if value == option.selected_value -%}
+                                {%- assign initial_image_index = forloop.index0 -%}
+                                {%- break -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+              
+                            {%- capture flickity_options -%}
+                            {
+                              "prevNextButtons": true,
+                              "pageDots": true,
+                              "initialIndex": {{ initial_image_index }},
+                              "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+                            }
+                            {%- endcapture -%}
+              
+                            <div id="{{ popover_id }}" class="VariantSelector" aria-hidden="true">
+                              {%- capture option_index -%}option{{ option.position }}{%- endcapture -%}
+              
+                              {%- assign option_indexes_excluded_color = '' -%}
+                              {%- assign selected_variant_title_excluded_color = '' -%}
+              
+                              {%- for option_nested in product.options_with_values -%}
+                                {%- if option_nested.position != option.position -%}
+                                  {%- assign option_indexes_excluded_color = option_indexes_excluded_color | append: option_nested.position | append: ',' -%}
+              
+                                  {%- for option_nested_value in option_nested.values -%}
+                                    {%- if option_nested_value == option_nested.selected_value -%}
+                                      {%- assign selected_variant_title_excluded_color = selected_variant_title_excluded_color | append: option_nested_value -%}
+                                    {%- endif -%}
+                                  {%- endfor -%}
+                                {%- endif -%}
+                              {%- endfor -%}
+              
+                              {%- assign option_indexes_excluded_color = option_indexes_excluded_color | split: ',' | compact -%}
+              
+                              <div class="VariantSelector__Carousel Carousel" data-flickity-config='{{ flickity_options }}'>
+                                {%- for value in option.values -%}
+                                  <div class="VariantSelector__Item Carousel__Cell {% if value == option.selected_value %}is-selected{% endif %}"
+                                       data-background-color="{{ value | split: ' ' | last | handle }}"
+                                       data-background-image="{{ value | handle | append: '.png' | asset_url }}"
+                                       data-option-position="{{ option.position }}"
+                                       data-option-value="{{ value | escape }}">
+                                    {%- for variant in product.variants -%}
+                                      {%- if variant[option_index] == value -%}
+                                        {%- assign variant_image = variant.image | default: product.featured_image -%}
+              
+                                        {%- assign variant_title_excluded_color = '' -%}
+                                        {%- for option_index_excluded_color in option_indexes_excluded_color -%}
+                                          {%- capture sub_option_index -%}option{{ option_index_excluded_color }}{%- endcapture -%}
+                                          {%- assign variant_title_excluded_color = variant_title_excluded_color | append: variant[sub_option_index] -%}
+                                        {%- endfor -%}
+              
+                                        <div data-variant-title="{{ variant_title_excluded_color | escape }}" class="VariantSelector__ImageWrapper AspectRatio AspectRatio--withFallback" aria-hidden="{% if selected_variant_title_excluded_color == variant_title_excluded_color %}false{% else %}true{% endif %}" style="max-width: {{ variant_image.width }}px; padding-bottom: {{ 100.0 | divided_by: variant_image.aspect_ratio }}%; --aspect-ratio: {{ variant_image.aspect_ratio }}">
+                                          {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,800', image: variant_image -%}{%- endcapture -%}
+                                          {%- assign image_url = variant_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+              
+                                          <img class="VariantSelector__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ variant_image.alt | escape }}">
+                                          <span class="Image__Loader"></span>
+                                        </div>
+                                      {%- endif -%}
+                                    {%- endfor -%}
+                                  </div>
+                                {%- endfor -%}
+                              </div>
+              
+                              <div class="VariantSelector__Info">
+                                <div class="VariantSelector__ChoiceList">
+                                  {%- for value in option.values -%}
+                                    {%- assign min_price_for_variant = product.price_max -%}
+              
+                                    {%- for variant in product.variants -%}
+                                      {%- if variant[option_index] == value -%}
+                                        {%- assign min_price_for_variant = min_price_for_variant | at_most: variant.price -%}
+                                      {%- endif -%}
+                                    {%- endfor -%}
+              
+                                    <div class="VariantSelector__Choice {% if value == option.selected_value %}is-selected{% endif %}">
+                                      <div class="VariantSelector__ChoiceColor">
+                                        {%- assign downcase_value = value | downcase -%}
+              
+                                        {%- assign color_swatch_name = value | handle | append: '.png' -%}
+                                        {%- assign color_swatch_image = images[color_swatch_name] -%}
+              
+                                        <span class="VariantSelector__ColorSwatch {% if downcase_value == 'white' %}VariantSelector__ColorSwatch--white{% endif %}" style="background-color: {{ value | replace: ' ', '' | downcase }}; {% if color_swatch_image != blank %}background-image: url({{ color_swatch_image | img_url: '64x64' }}){% endif %}"></span>
+                                        <span class="VariantSelector__ChoiceValue">{{ value }}</span>
+                                      </div>
+              
+                                      <div class="VariantSelector__ChoicePrice" data-color-position="{{ option.position }}">
+                                        {%- if available_prices_for_option_value.size > 1 -%}
+                                          {%- capture formatted_min_price -%}<span>{{ min_price_for_variant | money }}</span>{%- endcapture -%}
+                                          <span class="Heading Text--subdued">{{ 'product.form.from_price_html' | t: min_price: formatted_min_price }}</span>
+                                        {%- else -%}
+                                          <span class="Heading Text--subdued">{{ min_price_for_variant | money }}</span>
+                                        {%- endif -%}
+                                      </div>
+                                    </div>
+                                  {%- endfor -%}
+                                </div>
+              
+                                <button type="button" class="VariantSelector__Button Button Button--primary Button--full" data-action="select-variant">{{- 'product.form.select_model' | t -}}</button>
+                              </div>
+                            </div>
+                          {%- else -%}
+                            <div id="{{ popover_id }}" class="OptionSelector Popover Popover--withMinWidth" aria-hidden="true">
+                              <header class="Popover__Header">
+                                <button type="button" class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% render 'icon' with 'close' %}</button>
+                                <span class="Popover__Title Heading u-h4">{{ option.name | escape }}</span>
+                              </header>
+              
+                              <div class="Popover__Content">
+                                <div class="Popover__ValueList" data-scrollable>
+                                  
+                                  
+                                   
+                                   {%- if size_label contains downcase_option -%}
+                          
+                         
+                                  
+                                  {%- for value in product.variants -%}
+                                    <button type="button" class="Popover__Value main-click {% if value.title == option.selected_value %}is-selected{% endif %} Heading Link Link--primary u-h6"
+                                            data-value="{{ value.title | escape }}"
+                                             data-sw="{{ value.title | escape }}"
+                                            data-option-position="{{ option.position }}"
+                                            data-action="select-value"
+                                            {% if value.available %}{% else %} disabled {% endif %}
+                            >
+                                      {{- value.title | escape -}} - {% if value.available %}{{- value.price | money -}}{% else %} SOLD OUT {% endif %}
+                                    </button>
+                                  {%- endfor -%}
+                                  
+                                  {% else %}
+                                  
+                                  {%- for value in option.values -%}
+                                    <button type="button" class="Popover__Value main-click {% if value == option.selected_value %}is-selected{% endif %} Heading Link Link--primary u-h6"
+                                            data-value="{{ value | escape }}"
+                                             data-sw="{{ value | escape }}"
+                                            data-option-position="{{ option.position }}"
+                                            data-action="select-value">
+                                      {{- value | escape -}}
+                                    </button>
+                                  {%- endfor -%}
+                                  
+                                  
+                                   {%- endif -%}
+                                  
+                                </div>
+              
+                                {%- assign size_chart_page = block.settings.size_chart -%}
+              
+                                {%- if show_option_label == false and size_label contains downcase_option and size_chart_page != blank -%}
+                                  <button type="button" class="Popover__FooterHelp Heading Link Link--primary Text--subdued u-h6" data-action="open-modal" aria-controls="modal-{{ size_chart_page.handle }}">
+                                    {{- 'product.form.size_chart' | t -}}
+                                  </button>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endcapture -%}
+              
+                        {%- assign product_popovers = product_popovers | append: popover_html -%}
+                      {%- endif -%}
+                    </div>
+                  {%- endfor -%}
+              
+                  <div class="no-js ProductForm__Option">
+                    <div class="Select Select--primary">
+                      {%- render 'icon' with 'select-arrow' -%}
+              
+                      <select id="product-select-{{ product.id }}" name="id" title="Variant">
+                        {%- for variant in product.variants -%}
+                          <option {% if variant == selected_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled="disabled"{% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                        {%- endfor -%}
+                      </select>
+                    </div>
+                  </div>
+                {%- else -%}
+                  <input type="hidden" name="id" data-sku="{{ selected_variant.sku }}" value="{{ selected_variant.id }}">
+                {%- endunless -%}
+              </div>
+              
+
+   <!--cls 003 frame   -->
+            {% assign products =   block.settings.customframe_product %}
+              <div class="ProductForm sssdsds frame-block">
+                <div class="p-variant">
+                          {% render 'p-variant',
+                            product: products
+                          %}
+                        </div>
+                      </div>
+                  
+                  
+                      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            
+            
+                  
+                  
+                      <script type="text/javascript">//<![CDATA[
+                        $(document).on('click', '.ProductForm__Variants .ProductForm__Option', function(){
+                            $(this).find('button.ProductForm__Item ').attr('aria-expanded','true');
+                            console.log($(this).html());
+                        });
+                        $(document).on('click', '.p-variant .ProductForm__Item', function(){
+                          $(this).attr('aria-expanded','true');
+                            $(this).closest('.p-variant').find('.OptionSelector').attr({'aria-hidden':'false','tabindex':'-1'});
+                            // $(this).closest('.p-variant').find('.OptionSelector').css({'bottom':'320px','left':'770px'});
+                            $(this).closest('.p-variant').find('.OptionSelector').css('display','block');
+                        });
+                          $('.c-click').click( function(){
+                           var vid = $(this).data('attr');
+                           $("#varient_id").val(vid);
+                              
+                       }); 
+                                               
+                     $('button.main-click.is-selected').ready( function(){
+                 
+                      $('#varient_id').val("")
+                    setTimeout((function(){
+                   
+                   
+                   
+                   
+                      var dsw = jQuery('button.main-click.is-selected').data('sw');
+                   
+                    var cval = jQuery('button.c-click.is-selected').data('value');
+                   
+                      var thumb = '[data-size="' + dsw +'"]';
+                 $('.c-click').hide();
+                 $(thumb).show();
+                   $('.c-click[data-size="' + dsw +'"][data-value="' + cval +'"]').trigger('click');
+                   
+                   
+                 
+                 
+                   $(".ProductMeta__PriceList.Heading").show();
+                 }),500);
+                 });    
+                 
+                    
+                          
+                           </script> 
+                 
+<!--                   
+                <ul class="SizeSwatchList HorizontalList HorizontalList--spacingTight">
+                  {%- for option in block.settings.product_1.options_with_values -%}
+                  {%- for value in option.values -%}
+                    <li class="HorizontalList__Item">
+                      <input data-sw="{{ value | handleize }}" id="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}" class="SizeSwatch__Radio" type="radio" name="option-{{ forloop.parentloop.index0 }}" value="{{ value | escape }}" {% if value == option.selected_value %}checked="checked"{% endif %} data-option-position="{{ option.position }}">
+                      <label for="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}" class="SizeSwatch">{{ value }}</label>
+                    </li>
+                  {%- endfor -%}
+                  {%- endfor -%}
+                </ul> -->
+<!-- //cls003 qty -->
+<div class="ProductForm__QuantitySelector" {{ block.shopify_attributes }}>
+    <span class="ProductForm__Label">{{ 'product.form.quantity' | t }}:</span>
+
+  <div class="QuantitySelector QuantitySelector--large">
+    {%- assign quantity_minus_one = line_item.quantity | minus: 1 -%}
+
+    <button type="button" class="QuantitySelector__Button Link Link--secondary" data-action="decrease-quantity">{% render 'icon' with 'minus' %}</button>
+    <input type="text" class="QuantitySelector__CurrentQuantity" pattern="[0-9]*" name="quantity" value="1" aria-label="{{ 'product.form.quantity' | t }}">
+    <button type="button" class="QuantitySelector__Button Link Link--secondary" data-action="increase-quantity">{% render 'icon' with 'plus' %}</button>
+  </div>
+</div>
+<!-- cls003 addtocart -->
+
+<button type="submit" data-use-primary-button="{% if use_primary_button %}true{% else %}false{% endif %}" class="ProductForm__AddToCart Button {% if product.selected_or_first_available_variant.available and use_primary_button %}Button--primary{% else %}Button--secondary{% endif %} Button--full" {% if product.selected_or_first_available_variant.available %}data-action="add-to-cart"{% else %}disabled="disabled"{% endif %}>
+  {%- if product.selected_or_first_available_variant.available -%}
+    <span>{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{% else %}{{ 'product.form.add_to_cart' | t }}{% endif %}</span>
+
+    {%- if block.settings.show_price_in_button -%}
+      <span class="Button__SeparatorDot"></span>
+      <span>{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+    {%- endif -%}
+  {%- else -%}
+    {{- 'product.form.sold_out' | t -}}
+  {%- endif -%}
+</button>
+
+
+          </div>
+          </div>
+          </div>
+        </div>
+     
+    </form>
+    {%- endif -%}
+  {%- endfor -%}
+  <section>
+{% schema %}
+{
+  "name": "Custom Shop the look",
+  "class": "shopify-section--bordered",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "abovebelowproduct",
+      "label": "Option to show image above/below product info on mobile"
+  }
+  ],
+  "blocks": [
+    {
+      "type": "look",
+      "name": "Shop The Look",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "975 x 1185px .jpg recommended (vertical image) or 1200 x 1200px .jpg recommended (square image)."
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product",
+          "info": "Product not showing correctly? [Learn more](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+        },
+        {
+          "type": "product",
+          "id": "customframe_product",
+          "label": "Frame Product"
+      }
+           
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Custom Shop the look",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "look",
+          "settings": {
+            
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .customimageList{
+  display:flex;
+  width:100%; 
+  padding:10px; 
+  }
+  .customProductItem__Wrapper{
+  width:50%;
+  }
+  .customProductItem__Wrapper img{
+    width: 100%;
+    height: 500px;
+  }
+  .customproduct img{
+      width: 50%;
+    height: 300px;
+  }
+  .customwidth{
+    width: 50%;
+    margin: 0 auto;
+
+  }
+  
+  /* .customimageList :nth-child(1) {
+      order:2;
+   } */
+  @media screen and (max-width: 600px) {
+    .Section--spacingNormal  .customimageList  {
+      display: block;
+    }
+    .customproduct  {
+      margin-bottom: 15px;
+    }
+    .customProductItem__Wrapper{
+      width: 100%;
+    }
+    .customwidth{
+      width: 100%;
+    }
+    .customimageList :nth-child(1) {
+      order:2;
+   }
+   .Section--spacingNormal  .abovebelowproduct{ 
+        display: flex;
+        flex-direction: column;
+      }
+  }
+   @media screen and (max-width: 900px) {
+    .customwidth{
+      width: 80%;
+    }
+  
+   }
+
+</style>
