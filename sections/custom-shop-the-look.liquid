@@ -479,3 +479,22 @@
    }
 
 </style>
+    <script>
+    Shopify.addItem = async function(id,quantity){
+        await $.ajax({
+            method:'POST',
+            url:'/cart/change.js',
+            data:{ id:id, quantity:(++quantity) },
+            dataType: 'json'
+        })
+    };
+    
+    Shopify.removeItem = async function(id,quantity){
+        await $.ajax({
+            method:'POST',
+            url:'/cart/change.js',
+            data:{ id:id, quantity:(--quantity) },
+            dataType: 'json'
+        })
+    };
+</script>
