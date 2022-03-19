@@ -126,8 +126,7 @@
         </div>
       {%- endif -%}
     </div>
-  </div>
-{%- form 'product', product, class: 'ProductForm' -%}
+    {%- form 'product', product, class: 'ProductForm' -%}
   <div class="ProductForm__Variants">
     {%- unless product.has_only_default_variant -%}
       {%- for option in product.options_with_values -%}
@@ -352,6 +351,8 @@
     {{ form | payment_button }}
   {%- endif -%}
 {%- endform -%}
+  </div>
+
   {%- comment -%}
   --------------------------------------------------------------------------------------------------------------------
   OFF SCREEN ELEMENTS
