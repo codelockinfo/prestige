@@ -539,7 +539,7 @@
             "type": "look",
             "settings": {
               "image": "shopify:\/\/shop_images\/Main-Banner-1_180x_10f6f481-ed72-4476-be0a-c07598378f35.jpg",
-              "product_1": "happy-birthday-combo-gold-color",
+              "product_1": "cambridge",
               "customframe_product": "cambridge"
             }
           }
@@ -553,6 +553,7 @@
       }
     },
     "content_for_index": [
+      "1647509784aeb91b89",
       "slideshow",
       "featured-collections",
       "1536065219503",
@@ -561,8 +562,7 @@
       "1536065970902",
       "1536065842202",
       "1536067011368",
-      "164559665732121d99",
-      "1647509784aeb91b89"
+      "164559665732121d99"
     ]
   },
   "presets": {
