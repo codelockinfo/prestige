@@ -340,6 +340,7 @@
       },
       "1536065970902": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1536066003542": {
             "type": "collection",
@@ -444,6 +445,7 @@
       },
       "collection-list": {
         "type": "collection-list",
+        "disabled": true,
         "blocks": {
           "collection-0": {
             "type": "collection",
@@ -532,6 +534,17 @@
           "text": ""
         }
       },
+      "1647677996cfe82c09": {
+        "type": "text-with-image",
+        "settings": {
+          "subheading": "Sub-heading",
+          "title": "Title",
+          "image_position": "right",
+          "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>",
+          "link_text": "",
+          "link_url": ""
+        }
+      },
       "1647509784aeb91b89": {
         "type": "custom-shop-the-look",
         "blocks": {
@@ -551,43 +564,63 @@
           "abovebelowproduct": false
         }
       },
-      "1647677971f5cf3e95": {
-        "type": "shop-the-look",
+      "16479221688dd1596b": {
+        "type": "custom-multi-shopthelook",
         "blocks": {
-          "1647677971f5cf3e95-0": {
+          "f173661c-c1f5-4713-9c51-ae7f171789d1": {
             "type": "look",
             "settings": {
-              "dot_style": "light",
-              "product_1": "",
-              "product_1_horizontal_position": 30,
-              "product_1_vertical_position": 40,
+              "komes": "shopify:\/\/shop_images\/Main-Banner-1_180x_10f6f481-ed72-4476-be0a-c07598378f35.jpg",
+              "product_1": "happy-birthday-combo-gold-color",
+              "size_1": "s",
+              "customframe_product_1": "",
+              "frame_1": "",
               "product_2": "",
-              "product_2_horizontal_position": 45,
-              "product_2_vertical_position": 65,
+              "size_2": "",
+              "customframe_product_2": "",
+              "frame_2": "",
               "product_3": "",
-              "product_3_horizontal_position": 70,
-              "product_3_vertical_position": 50
+              "size_3": "",
+              "customframe_product_3": "",
+              "frame_3": "",
+              "product_4": "",
+              "size_4": "",
+              "customframe_product_4": "",
+              "frame_4": "",
+              "product_5": "",
+              "size_5": "",
+              "customframe_product_5": "",
+              "frame_5": "",
+              "product_6": "",
+              "size_6": "",
+              "customframe_product_6": "",
+              "frame_6": "",
+              "product_7": "",
+              "size_7": "",
+              "customframe_product_7": "",
+              "frame_7": "",
+              "product_8": "",
+              "size_8": "",
+              "customframe_product_8": "",
+              "frame_8": "",
+              "product_9": "",
+              "size_9": "",
+              "customframe_product_9": "",
+              "frame_9": "",
+              "product_10": "",
+              "size_10": "",
+              "customframe_product_10": "",
+              "frame_10": ""
             }
           }
         },
         "block_order": [
-          "1647677971f5cf3e95-0"
+          "f173661c-c1f5-4713-9c51-ae7f171789d1"
         ],
         "settings": {
-          "subheading": "Shop",
           "title": "Our looks",
-          "show_mobile_product_info": false
-        }
-      },
-      "1647677996cfe82c09": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "Sub-heading",
-          "title": "Title",
-          "image_position": "right",
-          "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>",
-          "link_text": "",
-          "link_url": ""
+          "subheading": "Shop",
+          "abovebelowproduct": false
         }
       }
     },
@@ -602,8 +635,8 @@
       "1536065842202",
       "1536067011368",
       "164559665732121d99",
-      "1647677971f5cf3e95",
-      "1647677996cfe82c09"
+      "1647677996cfe82c09",
+      "16479221688dd1596b"
     ]
   },
   "presets": {
