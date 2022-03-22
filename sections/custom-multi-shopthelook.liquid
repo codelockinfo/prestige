@@ -30,8 +30,8 @@
                     <form method="post" action="javascript:void(0);" id="add-to-cart-{{ product.handle }}" accept-charset="UTF-8" class="ProductForm" enctype="multipart/form-data">
                         {%- for i in (1..10) -%}
                         {%- assign product_setting = 'product_' | append: i -%}
-                        {%- assign productid = all_products[block.settings[product_setting]]  -%}
-                        `<script>console.log("selectore");console.log('{{ productid.title }}');</script>
+                        {%- assign product = all_products[block.settings[product_setting]]  -%}
+                        `<script>console.log("selectore");console.log('{{ product.title }}');</script>
                             <!-- {%- for variant in productid.variants -%}
                                 <h1>hhh{{variant.title}}</h1>
                             {%- endfor -%} -->
