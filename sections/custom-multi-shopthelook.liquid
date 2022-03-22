@@ -1,0 +1,380 @@
+    <section class="Section Section--spacingNormal" data-section-id="{{ section.id }}"
+        data-section-type="multi-shop-the-look">
+    
+    
+    
+        <div class="multiimageList {% if section.settings.abovebelowproduct %} multiabovebelowproduct {% endif %}">
+            {%- for block in section.blocks -%}
+            {%- if block.settings.komes != blank -%}
+            <div class="multiProductItem__Wrapper ">
+                <img class="" src="{{ block.settings.komes | img_url : 'master' }}" alt="{{ block.settings.image.alt | escape }}">
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+        
+
+            <div class="multiProductItem__Wrapper ">
+                <div class="Container">
+                    {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+                    {%- if section.settings.title != blank -%}
+                    <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+                    {%- endif -%}
+                    {%- if section.settings.subheading != blank -%}
+                    <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+                    {%- endif -%}
+                    <div class="customcheckbox">
+                        <input type="checkbox" name="include" value="addedframe">
+                        <label for="include">include frames - will contain total price for all frames</label><br>
+                    </div>
+                
+                    <form method="post" action="javascript:void(0);" id="add-to-cart-{{ product.handle }}" accept-charset="UTF-8" class="ProductForm" enctype="multipart/form-data">
+                        {%- for i in (1..10) -%}
+                        {%- assign product_setting = 'product_' | append: i -%}
+                        {%- assign productid = all_products[block.settings[product_setting]]  -%}
+                        `<script>console.log("selectore");console.log('{{ productid | json }}');</script>
+                            <!-- {%- for variant in productid.variants -%}
+                                <h1>hhh{{variant.title}}</h1>
+                            {%- endfor -%} -->
+                        {%- endfor -%}
+                    
+                
+                <div class="custom-atc">
+
+
+                    <button type="submit" data-use-primary-button="{% if use_primary_button %}true{% else %}false{% endif %}"
+                    class="ProductForm__AddToCart Button {% if product.selected_or_first_available_variant.available and use_primary_button %}Button--primary{% else %}Button--secondary{% endif %} Button--full"
+                    data-action="add-to-cart-custom" ><span>{{'product.form.add_to_cart' | t }}</span>
+                    
+                    <span class="Button__SeparatorDot"></span>
+                    <span>{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+                    
+                </button>
+            </div> 
+                </form>
+                </div>
+            </div>
+            {%- endif -%}
+        </div>
+        
+    
+    </section>
+
+    {% schema %}
+    {
+    "name": "Multiple Shop the look",
+    "class": "shopify-section--bordered",
+    "max_blocks": 4,
+    "settings": [
+    {
+    "type": "text",
+    "id": "title",
+    "label": "Heading",
+    "default": "Our looks"
+    },
+    {
+    "type": "textarea",
+    "id": "subheading",
+    "label": "Sub-heading",
+    "default": "Shop"
+    },
+    {
+    "type": "checkbox",
+    "id": "abovebelowproduct",
+    "label": "Option to show image above/below product info on mobile"
+    }
+    ],
+    "blocks": [
+    {
+    "type": "look",
+    "name": "Multiple Shop The Look",
+    "settings": [
+    {
+    "type": "image_picker",
+    "id": "komes",
+    "label": "Image",
+    "info": "975 x 1185px .jpg recommended (vertical image) or 1200 x 1200px .jpg recommended (square image)."
+    },
+    {
+    "type": "header",
+    "content": "Product 1"
+    },
+    {
+    "type": "product",
+    "id": "product_1",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_1",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_1",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_1",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 2"
+    },
+    {
+    "type": "product",
+    "id": "product_2",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_2",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_2",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_2",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 3"
+    },
+    {
+    "type": "product",
+    "id": "product_3",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_3",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_3",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_3",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 4"
+    },
+    {
+    "type": "product",
+    "id": "product_4",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_4",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_4",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_4",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 5"
+    },
+    {
+    "type": "product",
+    "id": "product_5",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_5",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_5",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_5",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 6"
+    },
+    {
+    "type": "product",
+    "id": "product_6",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_6",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_6",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_6",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 7"
+    },
+    {
+    "type": "product",
+    "id": "product_7",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_7",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_7",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_7",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 8"
+    },
+    {
+    "type": "product",
+    "id": "product_8",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_8",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_8",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_8",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 9"
+    },
+    {
+    "type": "product",
+    "id": "product_9",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_9",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_9",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_9",
+        "label": "Frame color"
+    },
+    {
+    "type": "header",
+    "content": "Product 10"
+    },
+    {
+    "type": "product",
+    "id": "product_10",
+    "label": "Product",
+    "info": "Product not showing correctly?[Learnmore](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+    },
+    {
+        "type": "text",
+        "id": "size_10",
+        "label": "Product size"
+    },
+    {
+    "type": "product",
+    "id": "customframe_product_10",
+    "label": "Frame Product"
+    },
+    {
+        "type": "text",
+        "id": "frame_10",
+        "label": "Frame color"
+    }
+
+    ]
+    }
+    ],
+    "presets": [
+    {
+    "category": "Product",
+    "name": "Multiple Shop the look"
+    }
+    ]
+    }
+    {% endschema %}
+    <style>
+    .multiimageList{
+        display:flex;
+        width: 100%;
+        padding: 10px;     
+    }
+    .customcheckbox{
+    padding: 10px;
+    }
+    .ProductForm__AddToCart {
+
+        border-color:#00db82;
+    }
+    .multiProductItem__Wrapper {
+        text-align: center;
+        width: 100%;
+    }
+    .multiProductItem__Wrapper  img {
+    width: 100%;
+    height: 500px;
+  }
+     </style>
