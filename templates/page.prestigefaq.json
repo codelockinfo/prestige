@@ -1,0 +1,178 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-faq",
+      "blocks": {
+        "5fcb790f-26a8-4aef-8ab7-d596bb512090": {
+          "type": "separator",
+          "settings": {
+            "title": "Produits"
+          }
+        },
+        "e5e9d62f-05ff-44e8-8528-26e5b2a4bbea": {
+          "type": "questions",
+          "settings": {
+            "title1": "Pourquoi ma perle en verre n'est pas identique à la photo du site ?",
+            "answer1": "<p>Toutes nos perles en verre sont faites à la main, elle ne peuvent donc pas être complètement identiques aux photos. <\/p><p>Votre perle ne vous plaît pas ? Vous pouvez nous retourner l'article sous 14 jours. <a href=\"https:\/\/trollbeadsfr.myshopify.com\/pages\/retours\" target=\"_blank\" title=\"https:\/\/trollbeadsfr.myshopify.com\/pages\/retours\">Politique de retours<\/a><\/p>",
+            "title2": "Pourquoi les bijoux en argent Trollbeads ne brillent pas ?",
+            "answer2": "<p>Tous nos bijoux en argent sont oxydés et cela fait partie de notre style ! L'argent oxydé comporte la même teneur en argent sterling que tout autre bijou.<\/p><p>Avec le temps et l'exposition à l'oxygène tous les bijoux s'oxydent naturellement. <\/p><p>Vous pouvez nettoyer vos bijoux en argent avec du savon et un chiffon doux, mais n'utilisez jamais de produits chimiques. <a href=\"https:\/\/trollbeadsfr.myshopify.com\/pages\/lentretien-de-vos-bijoux-trollbeads\" target=\"_blank\" title=\"https:\/\/trollbeadsfr.myshopify.com\/pages\/lentretien-de-vos-bijoux-trollbeads\">Entretien des bijoux Trollbeads<\/a><\/p>",
+            "title3": "Combien de carats possèdent les perles et bracelets en or Trollbeads ?",
+            "answer3": "<p>Toutes nos perles en or sont faites en or 18 carats. Les bracelets en or sont quant à eux en or 14 carats.<\/p>"
+          }
+        },
+        "4b027298-9557-41b1-ace8-9e240645757e": {
+          "type": "questions",
+          "settings": {
+            "title1": "Comment savoir si ma perle vient bien de chez Trollbeads ?",
+            "answer1": "<p>Tous les produits Trollbeads sont estampillés avec les mentions suivantes :<br\/><br\/>Argent\/Verre : 925S LAA<br\/>Perles en or : 750 LAA ou 18K LAA<br\/>Chaînes en or : 585 LAA<br\/><br\/>Veuillez noter que les perles en argent et en or ont été estampées pour la première fois à partir de janvier 2006. Les perles en verre ont quant à elle été estampées pour la première fois à partir de mai 2008. <\/p>",
+            "title2": "Comment trouver ma taille ?",
+            "answer2": "<p>Trouvez votre taille grâce à nos <a href=\"https:\/\/trollbeadsfr.myshopify.com\/blogs\/guide-des-tailles\" target=\"_blank\" title=\"https:\/\/trollbeadsfr.myshopify.com\/blogs\/guide-des-tailles\">guides des tailles.<\/a> <\/p><p>Si vous n'êtes pas certain de la taille qui vous correspond n'hésitez pas à contacter notre service client au 04 70 31 42 35 ou par mail à contact@trollbeads-france.fr.<\/p><p><\/p><p>Vous avez commandé votre article et la taille ne correspond finalement pas ? Vous avez la possibilité d'échanger votre produit sous 14 jours. <a href=\"https:\/\/trollbeadsfr.myshopify.com\/pages\/retours\" target=\"_blank\" title=\"https:\/\/trollbeadsfr.myshopify.com\/pages\/retours\">Echanges et retours<\/a><\/p>",
+            "title3": "Pourquoi ma paire de boucles d'oreilles n'est pas exactement de la même couleur ?",
+            "answer3": "<p>Les pierres naturelles peuvent varier de couleur car chaque pierre est unique. Nous faisons tout notre possible pour vous envoyer deux boucles d'oreilles similaires.<\/p>"
+          }
+        },
+        "2721d103-2b43-48b2-a5f9-704b2d34a4c3": {
+          "type": "questions",
+          "settings": {
+            "title1": "Puis-je porter plus d'un accessoire sur un crochet de boucles d'oreilles ?",
+            "answer1": "<p>Bien sûr ! Comme tous les bijoux Trollbeads, c'est à vous de personnaliser vos boucles d'oreilles et créer votre propre style.<\/p>",
+            "title2": "A quoi correspondent les perles \"Uniques\" ?",
+            "answer2": "<p>Comme leur nom l'indique, les \"Uniques\" sont des perles rares et très spéciales. Vous ne retrouverez jamais la même perle à l'identique. Cette gamme à vu le jour en 2005 en tant que projet de charité. Le but ? Apprendre à des réfugiés tibétains l'art de la fabrication des perles en verre. <\/p><p>Nos artistes verriers ont donc la liberté de jouer avec les couleurs et les motifs et d'expérimenter les nombreuses possibilités qu'offre le verre. Les designs des \"Uniques\" n'entrent pas dans la collection permanente Trollbeads, c'est pourquoi la gamme n'est disponible qu'en quantités très limitées.<\/p><p>Il est possible de trouver des \"Uniques\" directement chez l'un de nos revendeurs. <\/p><p>Pour le moment aucune perle \"Uniques\" n'est disponible à la vente sur notre site trollbeads.com\/fr-fr à l'exception du <a href=\"\/products\/porte-cle-uniques\" target=\"_blank\" title=\"Porte-Clés Uniques\">Porte-Clés Uniques<\/a>.<\/p>",
+            "title3": "Comment fonctionne la E-Carte Cadeau Trollbeads ?",
+            "answer3": "<p>Sélectionnez simplement le montant que vous souhaitez acheter et payez-le comme vous le feriez pour une transaction <br\/>normale. Votre e-carte cadeau Trollbeads peut être utilisée plusieurs fois sur notre site jusqu'à ce que le solde atteigne zéro. Nous garderons une trace du solde, de l'historique des transactions et de la date d'expiration, que vous pouvez vérifier à tout moment en nous envoyant un e-mail à contact@trollbeads-france.fr avec votre numéro et votre nom de e-carte cadeau.<\/p><p>Cette e-carte cadeau est envoyée par e-mail avec un code unique et est uniquement valable sur notre site Trollbeads France.<\/p>"
+          }
+        },
+        "5691b51a-4a54-4e86-aa67-5d8024c11fd4": {
+          "type": "questions",
+          "settings": {
+            "title1": "Comment entretenir mes bijoux Trollbeads ?",
+            "answer1": "<p>Découvrez notre <a href=\"\/pages\/lentretien-de-vos-bijoux-trollbeads\" target=\"_blank\" title=\"L'Entretien de vos Bijoux Trollbeads\">guide<\/a>.<\/p>",
+            "title2": "Existe-t-il une garantie sur les produits Trollbeads ?",
+            "answer2": "<p>Nos produits sont uniquement garantis sur les défauts de fabrication.<\/p>",
+            "title3": "",
+            "answer3": ""
+          }
+        },
+        "6d562775-e68b-48ba-8d9b-967491785981": {
+          "type": "separator",
+          "settings": {
+            "title": "Paiement"
+          }
+        },
+        "69be2e2b-e997-4a90-8e83-1eb8e151159b": {
+          "type": "questions",
+          "settings": {
+            "title1": "Quels sont les modes de paiement acceptés ?",
+            "answer1": "<p>Nous acceptons les paiements par carte bleue (Visa, Mastercard) et Paypal.<\/p>",
+            "title2": "Le paiement par carte bancaire est-il sécurisé ?",
+            "answer2": "<p>Le paiement sur notre site est entièrement sécurisé grâce à nos partenaires Payplug et Paypal. Au moment du paiement, le symbole du cadenas signifie que l'opération est cryptée et sécurisée. La technique du cryptage SSL permet de garantir la sécurité des informations que vous fournissez lors de la transaction bancaire. Vous recevez également un sms avec un code à saisir afin d'éviter les fraudes bancaires.<\/p>",
+            "title3": "",
+            "answer3": ""
+          }
+        },
+        "275f00e4-3ec2-461e-8ae6-f33a2e99f998": {
+          "type": "separator",
+          "settings": {
+            "title": "Mon compte"
+          }
+        },
+        "69c9b722-b09d-4ada-be83-89adcc8b587e": {
+          "type": "questions",
+          "settings": {
+            "title1": "Comment créer mon compte Trollbeads ?",
+            "answer1": "<p>Cliquez en haut à droite de la page sur l'icône mon compte. Cliquez sur le lien \"Vous n'avez pas de compte ? En créer un maintenant\". Insérez votre adresse email et un mot de passe et validez. Bravo, votre compte a été créé !<\/p>",
+            "title2": "J'ai oublié mon mot de passe, que faire ?",
+            "answer2": "<p>Cliquez sur l'icône de votre compte en haut à droite de la page. Cliquez ensuite sur \"Mot de passe oublié\" et entrez votre email. Vous recevrez sous quelques minutes un email pour réinitialiser votre mot de passe.<\/p><p>Connectez-vous à votre compte avec votre adresse email et votre nouveau mot de passe.<\/p>",
+            "title3": "A quoi me sert mon compte ?",
+            "answer3": "<p>En vous créant un compte, vous obtiendrez tout l'historique de vos commandes. <\/p><p>Vous pourrez également modifier votre adresse et vos informations personnelles.<\/p>"
+          }
+        },
+        "53898fb4-9efb-4a10-9c50-7fff2ae6fe25": {
+          "type": "separator",
+          "settings": {
+            "title": "Commande"
+          }
+        },
+        "1e0f5d0d-63e9-4ef4-9b86-9d9ac2cfa76d": {
+          "type": "questions",
+          "settings": {
+            "title1": "Comment savoir si ma commande a bien été passée ?",
+            "answer1": "<p>Lorsque vous validez votre commande, vous recevrez sous quelques minutes un email de confirmation. N'oubliez pas de vérifier dans les spams.<\/p><p>Vous pouvez également vous connecter à votre compte pour avoir accès à l'historique de vos commandes.<\/p><p>Vous avez un doute ? Contactez-nous directement au 04 70 31 42 35 ou par mail à contact@trollbeads-france.fr<\/p>",
+            "title2": "Comment suivre l'état de ma commande ?",
+            "answer2": "<p>Dès que votre commande est prête à partir de nos locaux, vous recevrez un email avec un lien de tracking.<\/p><p>Vous pouvez également vous connecter à votre compte pour avoir accès à l'historique de vos commandes.<\/p>",
+            "title3": "",
+            "answer3": ""
+          }
+        },
+        "7d578cd7-49f3-40b2-95b4-eff62affb870": {
+          "type": "separator",
+          "settings": {
+            "title": "Livraison"
+          }
+        },
+        "48359a25-d0d2-4bca-9f73-c383c473e33a": {
+          "type": "questions",
+          "settings": {
+            "title1": "Quels sont les modes de livraison ?",
+            "answer1": "<p>Les livraisons sont assurées par La Poste Colissimo et DPD France. Lors de l'achat de votre commande, à vous de choisir la livraison à domicile ou en point relais.<\/p>",
+            "title2": "Quels sont les frais de livraison ?",
+            "answer2": "<p>La livraison est gratuite en France métropolitaine.<\/p>",
+            "title3": "Quel est le délai de livraison ?",
+            "answer3": "<p>L'expédition se fait sous 3 à 4 jours ouvrés en Colissimo Recommandé avec Signature.<\/p><p>Vous recevrez un email de tracking pour suivre l’expédition en temps réel. <\/p>"
+          }
+        },
+        "3d05f081-a224-412f-91ad-e94cbdfb0350": {
+          "type": "questions",
+          "settings": {
+            "title1": "Que faire si un produit est manquant ou endommagé dans ma commande ?",
+            "answer1": "<p>Si à la livraison de votre colis, vous remarquez des signes d'endommagement extérieurs ou d'ouverture (carton déchiré, écrasé etc.), refusez la livraison.<\/p><p>L'assurance du transporteur prendra en charge le litige. Informez-nous dans les meilleurs délais. Si un produit est manquant ou endommagé, prenez si possible une photo.<\/p>",
+            "title2": "",
+            "answer2": "",
+            "title3": "",
+            "answer3": ""
+          }
+        },
+        "5dd3a2b4-14ce-415c-949b-ee11affd0cd8": {
+          "type": "separator",
+          "settings": {
+            "title": "Retours et échanges"
+          }
+        },
+        "fe746078-20d5-43f2-9d18-d5df10c2cc64": {
+          "type": "questions",
+          "settings": {
+            "title1": "Comment procéder pour faire un retour ?",
+            "answer1": "<p>Veillez à bien emballer votre produit et à le renvoyer dans une <br\/>enveloppe\/paquet protégé, accompagné de votre facture. Inscrivez clairement le message \"Retour\" sur le paquet. Nous vous recommandons d’assurer votre colis afin de garantir sa livraison à bon port.<\/p><p>Nous procèderons au remboursement de la valeur de l’article dès réception du colis. <\/p><p><span style=\"text-decoration:underline\"><strong>Adresse :<\/strong><\/span><\/p><p>RESOLUTIVE SAS<br\/>115 route d'Hauterive<br\/>03200 Abrest<br\/>France<\/p><p>Si vous souhaitez échanger un article acheté auprès d'un revendeur, vous devrez vous adresser directement à lui.<\/p><p>Pour toute question, contactez-nous au 04 70 31 42 35 ou par mail à contact@trollbeads-france.fr.<\/p>",
+            "title2": "Comment procéder pour faire un échange ?",
+            "answer2": "<p>Veillez à bien emballer votre produit et à le renvoyer dans une <br\/>enveloppe\/paquet protégé, accompagné de votre facture. Inscrivez clairement le message \"Échange\" sur le paquet. N'oubliez pas de mentionner la taille souhaitée si nécessaire. Nous vous recommandons d’assurer votre colis afin de garantir sa livraison à bon port.<\/p><p><span style=\"text-decoration:underline\"><strong>Adresse :<\/strong><\/span><\/p><p>RESOLUTIVE SAS<br\/>115 route d'Hauterive<br\/>03200 Abrest<br\/>France<\/p><p>Si vous souhaitez échanger un article acheté auprès d'un revendeur, vous devrez vous adresser directement à lui.<\/p><p>Pour toute question, contactez-nous au 04 70 31 42 35 ou par mail à contact@trollbeads-france.fr.<br\/><\/p>",
+            "title3": "Quel est le délai pour faire un retour\/échange ?",
+            "answer3": "<p>Tous les achats effectués sur ce site peuvent être retournés pour un échange, à condition d'inclure avec les produits votre facture et que le retour ait lieu sous un délai de 14 jours après l'achat. Nous procèderons au remboursement de la valeur de l’article dès réception du colis. Les frais de renvoi sont à votre charge. Toutefois, si le retour est effectué en raison d’une erreur de notre part, il va de soi que nous vous rembourserons les frais de renvoi.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5fcb790f-26a8-4aef-8ab7-d596bb512090",
+        "e5e9d62f-05ff-44e8-8528-26e5b2a4bbea",
+        "4b027298-9557-41b1-ace8-9e240645757e",
+        "2721d103-2b43-48b2-a5f9-704b2d34a4c3",
+        "5691b51a-4a54-4e86-aa67-5d8024c11fd4",
+        "6d562775-e68b-48ba-8d9b-967491785981",
+        "69be2e2b-e997-4a90-8e83-1eb8e151159b",
+        "275f00e4-3ec2-461e-8ae6-f33a2e99f998",
+        "69c9b722-b09d-4ada-be83-89adcc8b587e",
+        "53898fb4-9efb-4a10-9c50-7fff2ae6fe25",
+        "1e0f5d0d-63e9-4ef4-9b86-9d9ac2cfa76d",
+        "7d578cd7-49f3-40b2-95b4-eff62affb870",
+        "48359a25-d0d2-4bca-9f73-c383c473e33a",
+        "3d05f081-a224-412f-91ad-e94cbdfb0350",
+        "5dd3a2b4-14ce-415c-949b-ee11affd0cd8",
+        "fe746078-20d5-43f2-9d18-d5df10c2cc64"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
