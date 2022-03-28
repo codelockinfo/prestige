@@ -318,7 +318,7 @@
           "show_payment_button": true,
           "image_size": "medium",
           "enable_image_zoom": false,
-          "show_thumbnails": false,
+          "show_thumbnails": true,
           "tab_page_1_handle": "hello-everyone",
           "tab_page_2_handle": "index",
           "reviews_enabled": false,
