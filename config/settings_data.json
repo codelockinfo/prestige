@@ -316,7 +316,7 @@
           "show_inventory_quantity": true,
           "inventory_quantity_threshold": 3,
           "show_payment_button": true,
-          "image_size": "large",
+          "image_size": "medium",
           "enable_image_zoom": true,
           "show_thumbnails": true,
           "tab_page_1_handle": "hello-everyone",
