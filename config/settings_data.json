@@ -392,6 +392,7 @@
           "slide-1": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2021-08-31_134139_1944x_92df5e9b-ef6f-4c63-89e9-e7b41f9bd909.png",
               "apply_overlay": false,
               "content_position": "middleCenter",
               "subheading": "Slide title",
@@ -638,9 +639,9 @@
       }
     },
     "content_for_index": [
+      "slideshow",
       "16479221688dd1596b",
       "1647509784aeb91b89",
-      "slideshow",
       "featured-collections",
       "1536065219503",
       "shop-the-look",
