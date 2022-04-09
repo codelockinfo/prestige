@@ -14,15 +14,7 @@
 <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow">
   <div class="Slideshow {% if section.settings.show_fullscreen %}Slideshow--fullscreen{% endif %}">
     <div class="Slideshow__Carousel {% if section.settings.show_arrow %}Slideshow__Carousel--withScrollButton{% endif %} Carousel Carousel--fadeIn {% if section.settings.show_fullscreen %}Carousel--fixed{% endif %} Carousel--insideDots"
-         data-flickity-config='{{ flickity_options }}'     data-flickity='{
-                        
-                        "cellAlign": "{{ cell_align }}",
-                        "pageDots": false,
-                        "freeScroll": true,
-                        "contain": true,
-                        "wrapAround": {{ wrap_around }},
-                        "autoPlay":true
-                        }'>
+         data-flickity-config='{{ flickity_options }}'    >
       {%- for block in section.blocks -%}
         <div id="Slide{{ block.id }}" class="Slideshow__Slide Carousel__Cell {% if forloop.first %}is-selected{% endif %}" {% if forloop.first %}style="visibility: visible"{% endif %} data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
           {%- comment -%}
