@@ -622,6 +622,19 @@
           "subheading": "Shop",
           "abovebelowproduct": false
         }
+      },
+      "collection-infinite-scroll": {
+        "type": "collection-infinite-scroll",
+        "settings": {
+          "enable_infinite_scroll": true,
+          "container_selector": ".product-list",
+          "path": ".pagination-row .next",
+          "append": ".product-block",
+          "hide_nav": ".pagination-row",
+          "status": "",
+          "status_info": "Loading...",
+          "status_end": "No more product to load!"
+        }
       }
     },
     "content_for_index": [
