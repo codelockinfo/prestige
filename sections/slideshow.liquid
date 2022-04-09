@@ -17,6 +17,14 @@
          data-flickity-config='{{ flickity_options }}'    >
       {%- for block in section.blocks -%}
         <div id="Slide{{ block.id }}" class="Slideshow__Slide Carousel__Cell {% if forloop.first %}is-selected{% endif %}" {% if forloop.first %}style="visibility: visible"{% endif %} data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+           <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
           {%- comment -%}
             Implementation note: this is an art driven image selection so it would have been better to be able to use the "picture" tag instead. However,
             as the mobile and desktop image could have different aspect ratio, the image allocation space would not have work properly without explicitly
