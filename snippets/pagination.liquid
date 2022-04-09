@@ -1,5 +1,5 @@
 {%- if paginate.pages > 1 -%}
-  <div class="Pagination Text--subdued">
+  <div class="Pagination Text--subdued" style="display:none;">
     <div class="Pagination__Nav">
       {%- if paginate.previous -%}
         <a class="Pagination__NavItem Link Link--primary" rel="prev" title="{{ 'general.pagination.previous_page' | t }}" href="{{ paginate.previous.url | remove: 'view=ajax' }}{{ hash }}">
