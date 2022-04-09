@@ -629,7 +629,7 @@
           "enable_infinite_scroll": true,
           "container_selector": ".product-list",
           "path": ".pagination-row .next",
-          "append": ".Grid__Cell",
+          "append": ".product-list .Grid__Cell",
           "hide_nav": ".pagination-row",
           "status": ".page-load-status",
           "status_info": "Loading...",
